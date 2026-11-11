@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fady Magdy Soliman | Full Stack Web Developer</title>
+<meta name="description" content="Full Stack Web Developer specializing in React, Laravel, PHP and WordPress. Corporate websites, management systems and custom web applications for businesses across the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --dark:#3b3b3b;--yellow:#fcee6d;--orange:#f1502f;--navy:#0a0a5c;
+ --h:"Archivo","Segoe UI",Arial,sans-serif;--b:"Manrope","Segoe UI",Arial,sans-serif;
+ --img-marble:url("https://static.wixstatic.com/media/11062b_5b9f59e80cb84de5be6191ff8bc04251~mv2.jpg");
+ --img-desk:url("https://static.wixstatic.com/media/11062b_4456ba5e63714bc79e2a51e9218fd0d1~mv2.jpg");
+ --img-blur:url("https://static.wixstatic.com/media/095f24dd2c1949c8894b161fdc42a8db.jpg");
+ --img-work:url("https://static.wixstatic.com/media/11062b_b3b44769b7b74bf3a7c3e620b32e71e5~mv2.jpg");
+ --img-contact:url("https://static.wixstatic.com/media/ef9ce3e48be340a4b91f0c3e1644aa5b.jpg");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font:400 1rem/1.5 var(--b);color:#111;background:#fff}
+a{color:inherit}
+:focus-visible{outline:2px solid #1a73e8;outline-offset:3px}
+h1,h2,h3{font-family:var(--h);letter-spacing:-.03em;line-height:1.05}
+.small{font-size:.8rem;font-weight:500}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:#fff;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;box-shadow:0 1px 0 #e5e5e5}
+.logo{font:500 .8rem var(--b);letter-spacing:.04em;text-decoration:none;color:#333;text-transform:uppercase}
+nav{display:flex;gap:30px}
+nav a{font-size:.85rem;color:#666;text-decoration:none}
+nav a:hover{color:#000}
+
+/* hero */
+.hero{display:grid;grid-template-columns:65fr 35fr;min-height:400px;background:#f3f3f4 var(--img-marble) center/cover}
+.hero .txt{padding:34px 28px 40px}
+.hero h1{font-size:clamp(2.2rem,4.4vw,3rem);font-weight:800;margin:6px 0 62px;color:#000}
+.hero p{color:var(--navy);text-align:justify;max-width:470px;font-size:1.02rem;line-height:1.38;font-weight:500}
+.hero-btn{display:inline-block;margin-top:34px;padding:9px 18px;border:1px solid #333;font-size:.72rem;text-decoration:none;color:#222;background:transparent}
+.hero-btn:hover{background:#222;color:#fff}
+.hero figure{position:relative;box-shadow:-26px 0 22px -10px rgba(0,0,0,.45)}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;background:#bdb6a8}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;padding:18px 0;background:#fff}
+.ticker div{display:inline-block;animation:slide 22s linear infinite}
+.ticker span{font:500 1rem var(--b);letter-spacing:.4em;margin-right:2.4em;text-transform:uppercase}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* services */
+.services{padding:0 24px 56px}
+.services .head{padding:8px 0 16px}
+.services h2{font-size:clamp(2rem,4.4vw,2.8rem);font-weight:800}
+.cells{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #111}
+.cell{padding:26px 14px 28px;text-align:center;border-right:1px solid #111;display:flex;flex-direction:column;align-items:center;gap:4px}
+.cell:last-child{border-right:0}
+.cell svg{width:22px;height:22px;margin-bottom:10px}
+.cell h3{font-size:1rem;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.cell p{font-size:.78rem;color:#555;line-height:1.3;max-width:150px}
+
+/* recent work */
+.work{background:var(--dark);color:#fff;padding:30px 28px 44px}
+.work h2{font-size:clamp(2rem,4.4vw,2.8rem);font-weight:800;margin-bottom:24px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{text-decoration:none;color:#fff;display:block}
+.card .img{aspect-ratio:1/1;max-height:290px;width:100%;overflow:hidden;background:#222}
+.card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.card h3{font-size:1.55rem;font-weight:800;margin:14px 0 6px;line-height:1.15}
+.card:hover h3{color:var(--yellow)}
+.card p{font-size:.75rem;line-height:1.35;color:#ddd}
+
+/* tech stack */
+.stack{background:#ececec;padding:34px 24px 40px}
+.stack h2{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;color:#3b3b3b;text-align:center;margin-bottom:26px}
+.stack ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #333}
+.stack li{padding:22px 10px;text-align:center;font-weight:700;font-size:.85rem;border-right:1px solid #333}
+.stack li:last-child{border-right:0}
+
+/* process */
+.process{display:grid;grid-template-columns:1fr 2fr;min-height:320px}
+.process .l{background:#d6d8dc var(--img-desk) center/cover}
+.process .r{background:#8b97a6 var(--img-blur) center/cover;padding:34px 32px}
+.process h2{font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:800;color:var(--yellow);max-width:11em;line-height:1.15;padding-bottom:16px;position:relative;margin-bottom:12px}
+.process h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:1px;background:#fff}
+.process p,.process li{font-size:.82rem;font-weight:500;color:#111}
+.process ul{margin:4px 0 4px 36px}
+.proc-btn{display:inline-block;margin-top:56px;background:#e9e9e9;color:#333;padding:10px 16px;font-size:.68rem;text-decoration:none}
+.proc-btn:hover{background:#fff}
+
+/* tagline */
+.tag{min-height:140px;display:grid;place-items:center;text-align:center;padding:30px 24px;background:#555 var(--img-work) center/cover}
+.tag h2{font-size:clamp(1.3rem,3.2vw,1.8rem);font-weight:800;max-width:19em;line-height:1.5}
+.tag h2 span{background:#fff;color:#000;padding:2px 8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* highlights */
+.hl{background:var(--dark);color:#fff;padding:32px 30px 40px}
+.hl .lbl{color:var(--yellow)}
+.hl h2{font-size:clamp(2rem,4.4vw,2.7rem);font-weight:800;margin:20px 0 26px}
+.hl .row{display:grid;grid-template-columns:30% 1fr;gap:40px;padding:14px 0;border-top:1px solid rgba(255,255,255,.4);align-items:start}
+.hl .row:last-child{border-bottom:1px solid rgba(255,255,255,.4)}
+.hl h3{color:var(--yellow);font-size:1rem;font-weight:700;letter-spacing:-.01em;padding-left:22px;position:relative}
+.hl h3::before{content:"";position:absolute;left:2px;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+.hl p{font-size:.82rem;font-weight:700;text-align:justify;line-height:1.5}
+
+/* contact */
+.contact{display:grid;grid-template-columns:65fr 35fr;min-height:420px}
+.contact .l{padding:28px 28px 40px}
+.contact h2{font-size:clamp(2.2rem,5vw,3rem);font-weight:800;color:#333;margin:6px 0 22px}
+form{max-width:285px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:.72rem;color:#222;margin-bottom:16px}
+input,textarea{display:block;width:100%;font:inherit;font-size:.85rem;border:0;border-bottom:1px solid #333;padding:8px 0 5px;background:transparent;border-radius:0}
+input:focus,textarea:focus{outline:0;border-bottom:2px solid #000}
+textarea{min-height:56px;resize:vertical}
+.submit{background:var(--dark);color:#fff;border:0;padding:10px 0;width:86px;font:700 .75rem var(--b);cursor:pointer;margin-top:6px}
+.submit:hover{background:#000}
+.contact .r{background:#bcd3e6 var(--img-contact) center/cover}
+
+/* footer */
+footer{background:var(--dark);color:#fff}
+.f1{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #888}
+.f1>div{padding:22px 14px 26px;border-right:1px solid #888;font-weight:700;font-size:.8rem}
+.f1>div:last-child{border-right:0}
+.f1 a{color:var(--orange);display:block;margin-bottom:10px}
+.f1 .nm a{font-size:.9rem;margin:0 0 14px}
+.f1 .nm span{color:var(--orange);font-size:.82rem}
+.f1 .mid{padding-left:52px}
+.f1 .mid a{margin-bottom:22px}
+.f1 .soc{padding-left:40px}
+.f1 .soc a{font-size:.65rem;margin-bottom:6px;padding-left:12px}
+.f1 .soc .ct{font-size:.8rem;padding-left:0;margin-bottom:14px}
+.f2{padding:30px 20px 34px;text-align:center;border-bottom:1px solid #888;font-weight:800;font-size:.88rem;display:grid;gap:18px}
+.f3{display:grid;grid-template-columns:1.5fr 1fr}
+.f3>div{padding:22px 24px 26px;font-size:.7rem;font-weight:700}
+.f3>div:first-child{border-right:1px solid #888;padding-left:76px;position:relative}
+.f3>div:first-child::before{content:"\2198";position:absolute;left:24px;top:18px;font-size:.8rem}
+.f3>div:last-child{padding-left:44px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}}
+@media (max-width:860px){
+ header{padding:0 16px}nav{gap:14px}
+ .hero,.process,.contact{grid-template-columns:1fr}
+ .hero figure{box-shadow:none;height:380px}
+ .hero h1{margin-bottom:28px}
+ .cells,.stack ul{grid-template-columns:repeat(2,1fr)}
+ .cell{border-bottom:1px solid #111}.cell:nth-child(2n){border-right:0}.cell:last-child{grid-column:1/-1;border-bottom:0}
+ .stack li{border-bottom:1px solid #333}.stack li:nth-child(2n){border-right:0}.stack li:last-child{grid-column:1/-1;border-bottom:0}
+ .cards{grid-template-columns:1fr}
+ .process .l{min-height:220px}
+ .hl .row{grid-template-columns:1fr;gap:6px}
+ .contact .r{min-height:240px}
+ .f1,.f3{grid-template-columns:1fr}
+ .f1>div,.f3>div:first-child{border-right:0;border-bottom:1px solid #888}
+ .f1 .mid,.f1 .soc,.f3>div:last-child{padding-left:14px}
+ .f3>div:first-child{padding-left:50px}
+}
+@media (max-width:480px){.logo{display:none}header{justify-content:center}.two{grid-template-columns:1fr;gap:0}}
+</style>
+</head>
+<body>
+
+<header>
+ <a class="logo" href="#top">Fady Magdy Soliman</a>
+ <nav aria-label="Main">
+  <a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+ </nav>
+</header>
+
+<main id="top">
+ <section class="hero" id="about">
+  <div class="txt">
+   <div class="small">Full Stack Development</div>
+   <h1>Meet Fady Magdy</h1>
+   <p>Full Stack Web Developer specializing in React, Laravel, PHP, and WordPress development. Experienced in delivering web solutions for businesses across the UAE, including corporate websites, management systems, and custom web applications.</p>
+   <a class="hero-btn" href="#portfolio">View My Work</a>
+  </div>
+  <figure><img src="https://static.wixstatic.com/media/7bd8cc_6ae99cf7c08448fcb62298aca307b380~mv2.jpg" alt="Portrait of Fady Magdy Soliman"></figure>
+ </section>
+
+ <div class="ticker" aria-hidden="true">
+  <div>
+   <span>WordPress&amp;Full Stack Developer &#8600;</span><span>WordPress&amp;Full Stack Developer &#8600;</span><span>WordPress&amp;Full Stack Developer &#8600;</span><span>WordPress&amp;Full Stack Developer &#8600;</span>
+   <span>WordPress&amp;Full Stack Developer &#8600;</span><span>WordPress&amp;Full Stack Developer &#8600;</span><span>WordPress&amp;Full Stack Developer &#8600;</span><span>WordPress&amp;Full Stack Developer &#8600;</span>
+  </div>
+ </div>
+
+ <section class="services" id="services">
+  <div class="head">
+   <div class="small">Web Development Services</div>
+   <h2>What I Provide</h2>
+  </div>
+  <div class="cells">
+   <div class="cell">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="12" cy="12" r="3"/></svg>
+    <h3>Full Stack Development</h3><p>Custom Themes &amp; Plugins</p>
+   </div>
+   <div class="cell">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3zM13 13h8v8h-8z"/><circle cx="17" cy="7" r="4"/><circle cx="7" cy="17" r="4"/></svg>
+    <h3>WordPress Development</h3><p>Speed &amp; Optimization</p>
+   </div>
+   <div class="cell">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="4" width="9" height="7" rx="2"/><rect x="13" y="4" width="9" height="7" rx="2"/><rect x="2" y="13" width="20" height="7" rx="2"/></svg>
+    <h3>PHP &amp; LARAVEL</h3><p>Custom Web Applications</p>
+   </div>
+   <div class="cell">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="7" height="18" rx="3"/><circle cx="17" cy="7" r="4"/><rect x="13" y="14" width="8" height="7" rx="2"/></svg>
+    <h3>React Applications</h3><p>Figma to Code &amp; APIs</p>
+   </div>
+   <div class="cell">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="5" cy="12" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="12" cy="19" r="2.5"/></svg>
+    <h3>SEO &amp; Performance</h3><p>SEO Audit &amp; Optimization</p>
+   </div>
+  </div>
+ </section>
+
+ <section class="work" id="portfolio">
+  <div class="small">Highlighting My Projects</div>
+  <h2>Recent Work</h2>
+  <div class="cards">
+   <a class="card" href="https://luxuryfac.ae" target="_blank" rel="noopener">
+    <div class="img"><img src="https://static.wixstatic.com/media/7bd8cc_a56db8ccf7ee406096b54da30d43c100~mv2.jpg" alt="Luxury Lifestyle Platform website" loading="lazy"></div>
+    <h3>Luxury Lifestyle Platform.</h3>
+    <p>Built a membership-based platform for a UAE client with 9 service categories, map views, and affiliate program using WordPress &amp; Elementor.</p>
+   </a>
+   <a class="card" href="https://neotekmena.com" target="_blank" rel="noopener">
+    <div class="img"><img src="https://static.wixstatic.com/media/7bd8cc_b8bfeb2f8b0c4ff0bd0a21c438c3cf5a~mv2.jpg" alt="Neotek MENA website" loading="lazy"></div>
+    <h3>Neotek MENA Website</h3>
+    <p>Corporate Website<br>React &bull; Laravel &bull; Multilingual.</p>
+   </a>
+   <a class="card" href="https://github.com/fady023" target="_blank" rel="noopener">
+    <div class="img"><img src="https://static.wixstatic.com/media/7bd8cc_2bd08f70946641abab0f693c61507c86~mv2.png" alt="Employee Management App" loading="lazy"></div>
+    <h3>Employee Management App (Laravel)</h3>
+    <p>Built a custom Laravel web application to store and display employee data using Blade, MySQL, form validation, soft deletes, and custom middleware.</p>
+   </a>
+  </div>
+ </section>
+
+ <section class="stack" aria-labelledby="st">
+  <h2 id="st">My Tech Stack</h2>
+  <ul><li>React</li><li>Laravel</li><li>PHP</li><li>MySQL</li><li>WordPress</li></ul>
+ </section>
+
+ <section class="process">
+  <div class="l" role="img" aria-label="Laptop with code on screen and glasses on a desk"></div>
+  <div class="r">
+   <h2>My Development Process</h2>
+   <p>Explore my development process, from:</p>
+   <ul>
+    <li>understanding requirements .</li>
+    <li>planning and design.</li>
+    <li>development.</li>
+    <li>testing, and deployment.</li>
+   </ul>
+   <p>Each step ensures quality and efficiency.</p>
+   <a class="proc-btn" href="https://fady023.github.io/">View Portfolio</a>
+  </div>
+ </section>
+
+ <section class="tag">
+  <h2><span>Transforming ideas into modern, functional, and impactful digital experiences.</span></h2>
+ </section>
+
+ <section class="hl">
+  <div class="small lbl">Professional Experience</div>
+  <h2>Project Highlights</h2>
+  <div class="row"><h3>Restaurant Booking System</h3><p>Currently developing a restaurant reservation platform with booking management and customer services features.</p></div>
+  <div class="row"><h3>Real Estate Platform</h3><p>Developed a responsive real estate platform featuring property listings, advanced search capabilities, and a user-friendly interface designed to enhance property discovery and engagement.</p></div>
+  <div class="row"><h3>Employee Management App</h3><p>Built an internal management system for handling employee data, records and workflow operations.</p></div>
+ </section>
+
+ <section class="contact" id="contact">
+  <div class="l">
+   <div class="small">Ready to Start Your Project?</div>
+   <h2>Contact Me</h2>
+   <form id="f">
+    <div class="two">
+     <label>First name *<input name="first" required autocomplete="given-name"></label>
+     <label>Last name *<input name="last" required autocomplete="family-name"></label>
+    </div>
+    <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+    <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+    <label>Message<textarea name="msg" required></textarea></label>
+    <button class="submit" type="submit">Submit</button>
+   </form>
+  </div>
+  <div class="r" role="img" aria-label="Hands pointing at charts on a tablet"></div>
+ </section>
+</main>
+
+<footer>
+ <div class="f1">
+  <div class="nm"><a href="#top">FADY MAGDY SOLIMAN</a><span>Full Stack Web Developer</span></div>
+  <div class="mid"><a href="tel:+201501855016">+201501855016</a><a href="mailto:fady.msoliman3@gmail.com">fady.msoliman3@gmail.com</a></div>
+  <div class="soc"><a class="ct" href="#contact">Contact Me</a><a href="https://github.com/fady023" target="_blank" rel="noopener">GitHUB</a><a href="https://www.linkedin.com/in/fady-soliman-3b037b286/" target="_blank" rel="noopener">LinkedIn</a></div>
+ </div>
+ <div class="f2"><p>Experience delivering web solutions.</p><p>corporate websites and business systems for clients across the UAE.</p></div>
+ <div class="f3"><div>&copy; 2026 Fady Magdy Soliman</div><div>All Rights Reserved.</div></div>
+</footer>
+
+<script>
+document.getElementById("f").addEventListener("submit",function(e){
+ e.preventDefault();
+ var d=new FormData(this),g=function(k){return d.get(k)||""};
+ var body=g("msg")+"\n\n"+g("first")+" "+g("last")+"\n"+g("email")+(g("phone")?"\n"+g("phone"):"");
+ location.href="mailto:fady.msoliman3@gmail.com?subject="+encodeURIComponent("Project inquiry from "+g("first")+" "+g("last"))+"&body="+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
